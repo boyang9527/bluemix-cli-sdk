@@ -33,6 +33,7 @@ func (n *DemoPlugin) GetMetadata() plugin.PluginMetadata {
 			plugin.Namespace{
 				Name:        "demo",
 				Description: "Plugin demonstration",
+				Stage:       plugin.StageExperimental,
 			},
 		},
 		Commands: []plugin.Command{
@@ -41,12 +42,14 @@ func (n *DemoPlugin) GetMetadata() plugin.PluginMetadata {
 				Name:        "list",
 				Description: "List resources",
 				Usage:       "ibmcloud demo list",
+				Stage:       plugin.StageBeta,
 			},
 			{
 				Namespace:   "demo",
 				Name:        "show",
 				Description: "Show the details of a resource",
 				Usage:       "ibmcloud demo show",
+				Stage:       plugin.StageDeprecated,
 			},
 		},
 	}
